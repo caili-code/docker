@@ -15,3 +15,4 @@ Query OK, 0 rows affected (0.01 sec)
 mysql> FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0.01 sec)
 
+启动mysql容器:docker start mysql
