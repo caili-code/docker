@@ -16,3 +16,9 @@ mysql> FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0.01 sec)
 
 启动mysql容器:docker start mysql
+
+启动redis容器:docker run -itd --name redis-test -p 6379:6379 redis
+
+通过 redis-cli 连接测试使用 redis 服务:docker exec -it redis-test /bin/bash
+
+
