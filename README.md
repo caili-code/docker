@@ -24,3 +24,5 @@ Query OK, 0 rows affected (0.01 sec)
 docker run -p 8081:8081 -t myp:7.0 -link=mysql myp
 
 
+需要先在本地打包，后mysql修改为172.0.02
+
