@@ -21,4 +21,6 @@ Query OK, 0 rows affected (0.01 sec)
 
 通过 redis-cli 连接测试使用 redis 服务:docker exec -it redis-test /bin/bash
 
+docker run -p 8081:8081 -t myp:7.0 -link=mysql myp
+
 
