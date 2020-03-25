@@ -45,4 +45,43 @@ $ sudo apt-get install -y docker-ce
 查看docker服务是否启动：
 $ systemctl status docker
 
+mysql持久化:
+1.拉取mysql镜像文件
+拉取最新版本(也可以指定版本)
+
+docker pull mysql
+1
+检查本地镜像文件
+
+docker images
+1
+
+
+2.创建配置文件
+创建配置文件存放位置 和数据映射位置
+
+mkdir -p /mysql/config /mysql/data
+1
+创建编辑配置文件
+
+vi /mysql/config/my.conf
+1
+my.conf配置文件内容如下
+
+[mysqld]
+user=mysql
+character-set-server=utf8
+default_authentication_plugin=mysql_native_password
+
+[client]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
+————————————————
+
+3.启动容器
+docker run -d -p 3306:3306 --restart always --privileged=true --name dream_mysql -e MYSQL_ROOT_PASSWORD=123456 -v /mysql/config/my.conf:/etc/my.cof -v=/mysql/data:/var/lib/mysql mysql
+
+
 
