@@ -41,6 +41,22 @@ $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ub
 $ sudo apt-get update
 安装最新版本的Docker CE：
 $ sudo apt-get install -y docker-ce
+     
+
+错误提示：
+
+E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavialable)
+E: Unable to acquire the dpkg fronted lock (/var/lib/dpkg/lock-frontend), is another process using it?
+
+出现这个问题可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因可能是上次运行安装或更新时没有正常完成，才导致这个问题发生。
+
+解决方法：
+删掉之前遗留下来的进程
+
+sudo rm /var/cache/apt/archives/lock-frontend
+sudo  rm /var/lib/dpkg/lock-frontend
+
+
 验证docker
 查看docker服务是否启动：
 $ systemctl status docker
