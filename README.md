@@ -99,5 +99,7 @@ default-character-set=utf8
 3.启动容器
 docker run -d -p 3306:3306 --restart always --privileged=true --name dream_mysql -e MYSQL_ROOT_PASSWORD=123456 -v /mysql/config/my.conf:/etc/my.cof -v=/mysql/data:/var/lib/mysql mysql
 
+vmware和桌面连接配置:VMnet1 为桥接模式 VMnet8为Nat模式
+
 
 
