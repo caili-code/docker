@@ -100,5 +100,7 @@ default-character-set=utf8
 docker run -d -p 3306:3306 --restart always --privileged=true --name dream_mysql -e MYSQL_ROOT_PASSWORD=123456 -v /mysql/config/my.conf:/etc/my.cof -v=/mysql/data:/var/lib/mysql mysql
 虚拟机配置成桥接模式就可以和桌面通讯了
 
+springboot jar包打成镜像:docker build -t live:v1 .
+
 
 
