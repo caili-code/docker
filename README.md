@@ -102,5 +102,8 @@ docker run -d -p 3306:3306 --restart always --privileged=true --name dream_mysql
 
 springboot jar包打成镜像:docker build -t live:v1 .
 
+运行springbooot在docker:docker run -d -p 8081:8081 live:v1 livep
+
+
 
 
